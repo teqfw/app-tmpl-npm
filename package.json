@@ -1,0 +1,27 @@
+{
+  "name": "create-teqfw-app",
+  "version": "0.1.0",
+  "description": "Template to create TeqFW based web applications.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teqfw/app-tmpl-npm.git"
+  },
+  "keywords": [
+    "pet",
+    "project",
+    "hobby",
+    "web",
+    "applications"
+  ],
+  "author": "Alex Gusev <alex@flancer64.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/teqfw/app-tmpl-npm/issues"
+  },
+  "homepage": "https://github.com/teqfw/app-tmpl-npm#readme"
+}
