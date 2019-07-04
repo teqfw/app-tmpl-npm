@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 "use strict";
+
+
 /** =============================================================================
  * Import.
  * =========================================================================== */
@@ -9,7 +11,7 @@ const process = require("process");
 
 
 /** =============================================================================
- * Definitions.
+ * Definitions of working elements (constants, variables, functions).
  * =========================================================================== */
 const DEF_APP_NAME = "teqfw-app";
 const DIR_INIT = "init";
@@ -84,16 +86,9 @@ function copy_file_structure(source, target) {
     copy_dir(source, target);
 }
 
-/** =============================================================================
- * Configuration.
- * =========================================================================== */
-process.on("exit", (code) => {
-    console.log(`About to exit with code: ${code}`);
-});
-
 
 /** =============================================================================
- * Processing.
+ * Processing (do the job).
  * =========================================================================== */
 const path_source = get_path_source();
 const path_target = get_path_target();

@@ -1,4 +1,4 @@
-# app-tmpl-npm
+# create-teqfw-app
 
 Template to create TeqFW based web applications using npm.
 
