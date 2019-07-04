@@ -1,6 +1,6 @@
 {
   "name": "create-teqfw-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Template to create TeqFW based web applications.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
