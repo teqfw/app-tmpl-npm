@@ -4,13 +4,22 @@
   "description": "Sample TeqFW based application.",
   "main": "index.js",
   "scripts": {
-    "command": "node ./bin/command.js",
-    "cron": "node ./bin/cron.js",
-    "server": "node ./bin/server.js",
+    "docs": "./node_modules/jsdoc/jsdoc.js --debug -p -c ./jsdoc.conf.json",
+    "start": "node bin/tequila.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "teqfw-core-all": "github:teqfw/core-all"
+    "teqfw-core-app": "git+https://git@github.com/teqfw/core-app.git"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "jsdoc": "~3.6.3"
+  },
+  "teqfw": {
+    "autoload": {
+      "ns": "Vendor_App",
+      "path": "./src"
+    }
   }
 }
