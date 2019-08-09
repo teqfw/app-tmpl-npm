@@ -10,16 +10,15 @@ Template to create TeqFW based web applications using npm.
 
 TeqFW based application has the following typical structure:
 
+- **app**: application source scripts;
 - **bin**: application executable scripts;
-    - **command.js**:
-    - **cron.js**:
-    - **server.js**:
+    - **tequila.js**:
 - **cfg**: configuration scripts;
+    - **local.init.json**: template to create configuration for local instance (`local.json`);
 - **doc**: documentation files;
-- **pub**: client side startup files;
+- **pub**: public files (frontend);
 - **test**: *your* test scripts;
 - **var**:
-    - **log**: application logs;
     - **tmp**: application temporary files;
   
   
