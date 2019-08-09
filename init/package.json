@@ -14,7 +14,7 @@
     "url": "git+https://github.com/user/repo.git"
   },
   "dependencies": {
-    "teqfw-core-app": "git+https://git@github.com/user/repo.git"
+    "teqfw-core-app": "git+https://git@github.com/teqfw/core-app.git"
   },
   "devDependencies": {
     "jest": "^24.8.0",

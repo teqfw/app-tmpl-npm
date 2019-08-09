@@ -44,3 +44,9 @@ $ git commit -m "Init TeqFW application."
 $ git remote add origin git@github.com:user/my-app.git
 $ git push -u origin master
 ```
+
+# Build application
+
+```
+
+```
