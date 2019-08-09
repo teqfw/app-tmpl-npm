@@ -1,4 +1,5 @@
 {
+  "instance": "logging_marker_for_current_instance",
   "db": {
     "main": {
       "client": "mysql",
