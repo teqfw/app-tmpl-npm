@@ -1,3 +1,6 @@
 # `/cfg/` folder
 
-Copy `local.init.json` to `local.json` and place local configuration data for the instance inside.
+Copy `init.*` to `local.*` and place local configuration data for the instance inside.
+
+* `./local.json`: contains local configuration for application itself;
+* `./local.sh`: contains local configuration for shell scripts;

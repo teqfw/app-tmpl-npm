@@ -1,4 +1,12 @@
+/**/node_modules/
+/**/own_modules/
+/**/package-lock.json
+/**/ttttest.*
 /.idea/
-/node_modules/
-/own_modules/
-/var/
+/atlassian-ide-plugin.xml
+/cfg/local.*
+/composer.lock
+/package-lock.json
+/tmp/
+/var/server.pid
+/var/store/**

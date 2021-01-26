@@ -1,22 +1,14 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const process = require('process');
 
+// PARSE INPUT & DEFINE WORKING VARS
+const DEF_APP_NAME = 'teqfw-app';
+const DIR_INIT = 'init';
 
-/** =============================================================================
- * Import.
- * =========================================================================== */
-const fs = require("fs");
-const path = require("path");
-const process = require("process");
-
-
-/** =============================================================================
- * Definitions of working elements (constants, variables, functions).
- * =========================================================================== */
-const DEF_APP_NAME = "teqfw-app";
-const DIR_INIT = "init";
-
-
+// DEFINE INNER FUNCTIONS
 /**
  * Compose full path to the folder with default structure of the application files & folders.
  * @returns {string}
@@ -86,10 +78,7 @@ function copy_file_structure(source, target) {
     copy_dir(source, target);
 }
 
-
-/** =============================================================================
- * Processing (do the job).
- * =========================================================================== */
+// MAIN FUNCTIONALITY
 const path_source = get_path_source();
 const path_target = get_path_target();
 copy_file_structure(path_source, path_target);
