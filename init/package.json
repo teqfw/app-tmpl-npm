@@ -23,9 +23,8 @@
     "test": "./node_modules/mocha/bin/mocha --require esm --recursive './test/**/*.test.js'"
   },
   "dependencies": {
-    "@flancer32/teq_acl": "github:flancer32/teq_acl",
-    "@flancer32/teq_user": "github:flancer32/teq_user",
     "@teqfw/core-app": "github:teqfw/core-app",
+    "@teqfw/di": "github:teqfw/di",
     "i18next": "*",
     "i18next-browser-languagedetector": "*",
     "marked": "*",
@@ -34,9 +33,9 @@
     "node-fetch": "*",
     "sanitize-html": "*",
     "serve-static": "*",
-    "vue": "^3.0.1",
-    "vue-router": "^4.0.0-rc.3",
-    "vuex": "^4.0.0-rc.1"
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "jest": "*",
