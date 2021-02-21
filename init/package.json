@@ -7,7 +7,7 @@
     "url": "https://github.com/vendor/project/issues",
     "email": "alex@flancer32.com"
   },
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0-only",
   "author": {
     "name": "Alex Gusev",
     "email": "alex@flancer64.com",
