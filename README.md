@@ -40,20 +40,31 @@ $ git remote add origin git@github.com:user/my-app.git
 $ git push -u origin master
 ```
 
+# Configuration
+
+```shell
+$ cd ./cfg/
+$ cp init.json local.json
+$ cp init.sh local.sh
+```
+
 # Deployment
 
 ## 'dev' mode
+
 ```
 $ ./bin/deploy/dev.sh
 ```
 
 ## 'live' mode
+
 Clone project from git and copy deployment configuration inside then launch the deployment script.
 
-Copy this file to root of installation folder (/home/live/inst/).
-Configuration files `local.json` & `local.sh` are expected in the root folder.
+Copy this file to root of installation folder (/home/live/inst/). Configuration files `local.json` & `local.sh` are
+expected in the root folder.
 
 Files and folders in the root folder:
+
 ```shell
       -rwxrwxr-x 1 live live  305 Jan  5 16:46 clone.sh
       drwxrwxr-x 9 live live 4.0K Jan  5 16:47 app_YYYYMMDD

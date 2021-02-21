@@ -1,5 +1,5 @@
 {
-  "name": "teqfw-app-sample",
+  "name": "@vendor/project",
   "version": "0.1.0",
   "description": "Sample TeqFW based application.",
   "homepage": "https://your.project.com/",
@@ -15,29 +15,26 @@
   },
   "repository": "github:vendor/project",
   "scripts": {
-    "db-upgrade": "node --experimental-modules ./bin/tequila.mjs db-schema-upgrade",
+    "db-upgrade": "node ./bin/tequila.mjs app-db-reset",
     "docs": "./node_modules/jsdoc/jsdoc.js --debug -p -c ./jsdoc.conf.json",
     "rebuild": "rm -fr node_modules package-lock.json && npm install",
-    "start": "node --experimental-modules ./bin/tequila.mjs start",
-    "stop": "node --experimental-modules ./bin/tequila.mjs stop",
-    "test": "./node_modules/mocha/bin/mocha --require esm --recursive './test/**/*.test.js'"
+    "start": "node ./bin/tequila.mjs http2-start",
+    "stop": "node ./bin/tequila.mjs http2-stop",
+    "test": "./node_modules/mocha/bin/mocha --require esm --recursive './test/**/*.test.js'",
+    "version": "node ./bin/tequila.mjs core-version"
   },
   "dependencies": {
-    "@teqfw/core-app": "github:teqfw/core-app",
-    "@teqfw/di": "github:teqfw/di",
-    "i18next": "*",
-    "i18next-browser-languagedetector": "*",
-    "marked": "*",
-    "mime-types": "*",
-    "mysql2": "*",
-    "node-fetch": "*",
-    "sanitize-html": "*",
-    "serve-static": "*",
-    "vue": "^3.0.5",
-    "vue-router": "^4.0.3",
-    "vuex": "^4.0.0-rc.2"
+    "@flancer32/teq_user": "github:flancer32/teq_user",
+    "mysql2": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "eslint": "^7.13.0",
+    "esm": "^3.2.25",
     "jest": "*",
     "jsdoc": "*"
   },

@@ -11,9 +11,6 @@ export default function Vendor_Project_Front_App(spec) {
     const session = spec[DEF.MOD_USER.DI_SESSION];  // named singleton
     const router = spec[DEF.MOD_VUE.DI_ROUTER];  // named singleton
     const app = spec[DEF.MOD_CORE.DI_APP];  // named singleton
-
-    /** @type {Vendor_Project_Front_Layout_Main} */
-    const layoutMain = spec['Vendor_Project_Front_Layout_Main$'];    // Vue component singleton
     /** @type {TeqFw_Core_App_Front_Widget_Layout_Centered} */
     const layoutCentered = spec['TeqFw_Core_App_Front_Widget_Layout_Centered$'];    // Vue component singleton
     const mapMutations = spec[DEF.MOD_VUE.DI_VUEX].mapMutations;
@@ -30,7 +27,7 @@ export default function Vendor_Project_Front_App(spec) {
     return {
         name: 'FrontApp',
         template,
-        components: {userSignUp},
+        components: {},
         data: function () {
             return {
                 out: 'Vendor_Project_Front_App',
