@@ -34,6 +34,11 @@ File to create `systemd` service to start/stop PWA. Link this file to `/etc/syst
 # ln -s /.../bin/pwa-tequila.service
 ```
 
+Reload systemd after `*.service` changes:
+```shell
+# systemctl daemon-reload
+```
+
 Validate installed services:
 
 ```shell
