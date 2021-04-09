@@ -7,3 +7,5 @@ ES6-modules in teq-project:
 * `./Pub/` - published API (scripts being used by other plugins);
 * `./Shared/` - scripts to use both in backend and browsers;
 * `./Store/` - scripts to communicate with data storages (RDB like Mariadb or Postgres, IndexedDB in browsers);
+
+Нужно Store раскидать по папкам Back/Front/Shared. Pub лучше внести под Shared/Api & Back/Api.
