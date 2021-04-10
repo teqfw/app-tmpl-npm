@@ -33,11 +33,13 @@ Create empty github repository `https://github.com/user/my-app` (w/o LICENSE, RE
 
 ```
 $ cd my-app
-$ git init
+$ git init 
 $ git add .
 $ git commit -m "Init TeqFW application."
+$ git checkout -b main                                                    // create 'main' branch
 $ git remote add origin git@github.com:user/my-app.git
-$ git push -u origin master
+$ git pull origin main --allow-unrelated-histories                        // optional
+$ git push -u origin main
 ```
 
 # Configuration

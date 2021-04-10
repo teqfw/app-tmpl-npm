@@ -15,8 +15,7 @@ const DIR_INIT = 'init';
  */
 function get_path_source() {
     const dir_root = path.join(__dirname, '..');
-    const result = path.join(dir_root, DIR_INIT);
-    return result;
+    return path.join(dir_root, DIR_INIT);
 }
 
 /**
@@ -29,8 +28,7 @@ function get_path_target() {
     // get the first CLI argument (0 - npm, 1 - create-app.js, 2 - the first argument if exists)
     const cli_arg = process.argv[2];
     const app_name = (cli_arg !== undefined) ? cli_arg : DEF_APP_NAME;
-    const result = path.join(dir_work, app_name);
-    return result;
+    return path.join(dir_work, app_name);
 }
 
 /**
