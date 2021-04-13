@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "ns": "Vendor_Project",
+    "path": "./src"
+  },
+  "http2": {
+    "realms": [
+      "pub",
+      "sign"
+    ]
+  }
+}
