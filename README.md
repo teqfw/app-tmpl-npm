@@ -38,7 +38,7 @@ $ git add .
 $ git commit -m "Init TeqFW application."
 $ git checkout -b main                                                    // create 'main' branch
 $ git remote add origin git@github.com:user/my-app.git
-$ git pull origin main --allow-unrelated-histories                        // optional
+$ git pull origin main --allow-unrelated-histories                        // if 'main' was created before in origin
 $ git push -u origin main
 ```
 

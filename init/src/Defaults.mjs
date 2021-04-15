@@ -1,20 +1,30 @@
-export default class Vendor_Project_Defaults {
+/**
+ * Application level constants (hardcoded configuration).
+ */
+class Vendor_Project_Defaults {
     BACK_REALM = 'app';  // realm for API services ('/api/app/...') and CLI commands ('app-...')
-    DATA_USER_ID_ADMIN = 1; // app's sample data
-    DATA_USER_ID_CUST = 2;
 
+    // DI container labels for objects used by this plugin
+    DI_OBJ = 'pluginObject';
 
+    // DEF-objects of the dependencies.
     /** @type {TeqFw_Core_App_Defaults} */
     MOD_CORE;
-    /** @type {Fl32_Teq_User_Defaults} */
-    MOD_USER;
-    /** @type {TeqFw_Vue_Defaults} */
-    MOD_VUE;
+
+    // FRONTEND REALMS & ROUTES
+    REALM_PUB = 'pub';
+    REALM_PUB_ROUTE_HOME = '/';
+    REALM_SIGN = 'sign';
+    REALM_SIGN_ROUTE_HOME = '/';
+
+    // SERVICES ROUTES
+    SERV_GROUP_LIST = '/group/list'; // service at '/api/app/group/list' route
 
     constructor(spec) {
-        this.MOD_CORE = spec['TeqFw_Core_App_Defaults$'];    // instance singleton
-        this.MOD_USER = spec['Fl32_Teq_User_Defaults$'];    // instance singleton
-        this.MOD_VUE = spec['TeqFw_Vue_Defaults$'];    // instance singleton
+        this.MOD_CORE = spec['TeqFw_Core_App_Defaults$']; // instance singleton
         Object.freeze(this);
     }
 }
+
+// MODULE'S EXPORT
+export default Vendor_Project_Defaults;
