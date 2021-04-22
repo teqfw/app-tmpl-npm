@@ -2,7 +2,7 @@ const template = `
 <p>{{out}}</p>
 `;
 
-export default function Vendor_Project_Front_App(spec) {
+export default function Vendor_Project_Front_Realm_Admin_App(spec) {
     /** @type {Vendor_Project_Defaults} */
     const DEF = spec['Vendor_Project_Defaults$'];    // instance singleton
     /** @type {TeqFw_Di_Container} */
@@ -30,7 +30,7 @@ export default function Vendor_Project_Front_App(spec) {
         components: {},
         data: function () {
             return {
-                out: 'Vendor_Project_Front_App',
+                out: 'Vendor_Project_Front_Realm_Admin_App',
             };
         },
         computed: {},
