@@ -10,6 +10,8 @@ class Vendor_Project_Defaults {
     // DEF-objects of the dependencies.
     /** @type {TeqFw_Core_App_Defaults} */
     MOD_CORE;
+    /** @type {TeqFw_Ui_Quasar_Defaults} */
+    MOD_QUASAR;
     /** @type {Fl32_Ap_User_Defaults} */
     MOD_USER;
     /** @type {TeqFw_Vue_Defaults} */
@@ -30,6 +32,7 @@ class Vendor_Project_Defaults {
 
     constructor(spec) {
         this.MOD_CORE = spec['TeqFw_Core_App_Defaults$']; // instance singleton
+        this.MOD_QUASAR = spec['TeqFw_Ui_Quasar_Defaults$']; // instance singleton
         this.MOD_USER = spec['Fl32_Ap_User_Defaults$']; // instance singleton
         this.MOD_VUE = spec['TeqFw_Vue_Defaults$']; // instance singleton
 

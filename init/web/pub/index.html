@@ -5,8 +5,8 @@
     <meta name="description" content="TeqFW PWA">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TeqFW PWA</title>
-    <link rel="manifest" href="pwa.webmanifest">
-    <link href="styles_boot.css" rel="stylesheet" type="text/css">
+    <link rel="manifest" href="./pwa.webmanifest">
+    <link rel="stylesheet" href="./styles_boot.css" type="text/css">
 
     <script>
         async function bootstrap() {
@@ -33,19 +33,32 @@
                  * @returns {Promise<Object>}
                  */
                 async function initI18n(container, app) {
-                    const gate = await container.get('TeqFw_Core_App_Front_Gate_Load_I18n$');
-                    /** @type {typeof TeqFw_Core_App_Shared_Service_Route_Load_I18n_Request} */
-                    const Request = await container.get('TeqFw_Core_App_Shared_Service_Route_Load_I18n#Request');
-                    const resources = await gate(new Request());
+                    // PARSE INPUT & DEFINE WORKING VARS
+                    const defaultNS = 'front';
+                    const supportedLngs = ['en', 'es'];
+                    const fallbackLng = 'en';
+
+                    // MAIN FUNCTIONALITY
                     // self.i18next - see "./src/i18next/i18next.min.js"
                     // see "./src/i18next-detect/i18nextBrowserLanguageDetector.js"
                     self.i18next.use(self.i18nextBrowserLanguageDetector);
-                    await self.i18next.init({
-                        resources, defaultNS: 'app',
-                        supportedLngs: ['lv', 'ru'],
-                    });
+                    await self.i18next.init({defaultNS, supportedLngs, fallbackLng});
+                    const lng = self.i18next.language;
+                    // load i18n resources for current language
+                    const gate = await container.get('TeqFw_I18n_Front_Gate_Load$');
+                    /** @type {TeqFw_I18n_Shared_Service_Route_Load.Request} */
+                    const req = await container.get('TeqFw_I18n_Shared_Service_Route_Load#Request$$'); // new instance
+                    req.lang = lng;
+                    req.namespace = defaultNS;
+                    const res = await gate(req);
+                    self.i18next.addResourceBundle(lng, defaultNS, res, true, true);
+                    // load resources for fallback language
+                    if (lng !== fallbackLng) {
+                        req.lang = fallbackLng;
+                        const res = await gate(req);
+                        self.i18next.addResourceBundle(fallbackLng, defaultNS, res, true, true);
+                    }
                     // config options after 'init'
-                    self.i18next.options.fallbackLng = 'ru';
                     // add '$t' translation function to Vue app
                     const appProps = app.config.globalProperties;
                     appProps.$t = (key, options) => self.i18next.t(key, options);
@@ -76,7 +89,7 @@
                     /** @type {Vendor_Project_Front_Realm_Admin_State} */
                     const state = await container.get('Vendor_Project_Front_Realm_Admin_State$'); // object singleton
                     const store = Vuex.createStore(state);
-                    container.set(DEF.DI_STORE, store);
+                    container.set(DEF.MOD_CORE.DI_STORE, store);
                     app.use(store);
                 }
 
@@ -92,7 +105,7 @@
                 // init quasar framework
                 result.use(self.Quasar, {config: {}});
                 self.Quasar.iconSet.set(self.Quasar.iconSet.svgMaterialIcons);
-                container.set(DEF.MOD_CORE.DI_QUASAR, self.Quasar);
+                container.set(DEF.MOD_QUASAR.DI_QUASAR, self.Quasar);
                 await initVuex(result, container, DEF, self.Vuex);
                 return result;
             }
@@ -177,7 +190,7 @@
                 await initSession(container, DEF);
                 // create Vue app, load root component and mount application to DOM
                 const app = await initApp(container, DEF);
-                const appRoot = await container.get('Vendor_Project_Front_Realm_Admin_App$'); // vue comp tmpl
+                const appRoot = await container.get('Fl32_Ap_Front_Realm_Admin_App$'); // vue comp tmpl
                 app.component('appRoot', appRoot);
                 // mount Vue application to the page
                 app.mount('BODY > DIV');
@@ -237,7 +250,7 @@
 <!-- These styles are loaded after landing page is displayed -->
 <link rel="stylesheet" href="./web/@teqfw/ui-quasar/styles.css">
 <link rel="stylesheet" href="./src/quasar/quasar.prod.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="./styles.css">
 
 </body>
 </html>
